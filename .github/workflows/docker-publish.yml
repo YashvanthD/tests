@@ -95,5 +95,7 @@ jobs:
         # against the sigstore community Fulcio instance.
         run: echo "${{ steps.meta.outputs.tags }}" | xargs -I {} cosign sign {}@${{ steps.build-and-push.outputs.digest }}
 
+      - name: BUILD Docker image
+        run: docker build -t test-app . 
       - name: RUN Docker image
-        run: docker run ${{ env.IMAGE_NAME }}
+        run: docker run test-app
