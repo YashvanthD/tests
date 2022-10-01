@@ -19,7 +19,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: test
 
 
 jobs:
@@ -98,7 +98,7 @@ jobs:
       - name: BUILD Docker image
         run: docker build -t test-app . 
       - name: RUN Docker image
-        run: docker run ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        run: docker run ${{ env.IMAGE_NAME }}
 
 
 
