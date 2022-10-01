@@ -98,11 +98,7 @@ jobs:
       - name: BUILD Docker image
         run: docker build -t test-app . 
       - name: RUN Docker image
-        run: docker run test-app
+        run: docker run ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
-      - name: Docker Run Action
-        with:
-          # Image
-          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
 
