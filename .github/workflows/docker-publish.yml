@@ -99,3 +99,12 @@ jobs:
         run: docker build -t test-app . 
       - name: RUN Docker image
         run: docker run test-app
+
+      - name: Docker Run Action
+        # You may pin to the exact commit or the version.
+        uses: docker/docker-run-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
+        with:
+          # Image
+          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+
