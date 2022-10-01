@@ -98,7 +98,8 @@ jobs:
       - name: BUILD Docker image
         run: docker build -t test-app . 
       - name: RUN Docker image
-        run: docker pull ghcr.io/yashvanthd/tests:sha256-7cc11d252f3a04588e456713ce1458cc2ff799ed2277e6f0f010423e8ff1b52e.sig
-
+        run: docker pull ghcr.io/yashvanthd/tests:main
+      - name: RUN Docker image 2
+        run: docker run ghcr.io/yashvanthd/tests:main
 
 
