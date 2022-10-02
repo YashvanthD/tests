@@ -94,7 +94,15 @@ jobs:
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
         run: echo "${{ steps.meta.outputs.tags }}" | xargs -I {} cosign sign {}@${{ steps.build-and-push.outputs.digest }}
+        
+      - name: Python Dependency Installation
+        # You may pin to the exact commit or the version.
+        # uses: py-actions/py-dependency-install@0edc1b192a4ccf1170828f4e6f833f913f82035a
+        uses: py-actions/py-dependency-install@v3.0.0
+        with:
+          path: requirement.txt
 
+          
       - name: BUILD Docker image
         run: docker build -t test-app . 
       - name: RUN Docker image
