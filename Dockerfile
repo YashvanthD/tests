@@ -3,4 +3,5 @@ COPY . /app
 
 WORKDIR /app
 
-CMD node app.js
+CMD pip install -r requirement.txt
+CMD python bot.py
