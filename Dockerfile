@@ -1,4 +1,4 @@
-FROM rackspacedot/python37
+FROM python:latest
 COPY . /app
 
 WORKDIR /app
