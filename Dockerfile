@@ -1,4 +1,4 @@
-FROM node:12.2.0-alpine
+FROM rackspacedot/python37
 COPY . /app
 
 WORKDIR /app
